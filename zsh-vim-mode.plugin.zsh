@@ -30,11 +30,12 @@ TRAPWINCH() {
 zle -N zle-keymap-select
 zle -N edit-command-line
 
+autoload -Uz edit-command-line
 
 bindkey -v
+bindkey '^f' vi-forward-word
 
 # allow v to edit the command line (standard behaviour)
-autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
 # allow ctrl-p, ctrl-n for navigate history (standard behaviour)
